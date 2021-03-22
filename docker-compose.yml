@@ -1,0 +1,17 @@
+version: "3"
+services:
+  salt:
+    image: salt-master:latest
+    volumes:
+      - ./master.config:/etc/salt/master
+      - ./states:/srv/salt
+  salt-minion:
+    image: salt-minion-debian
+  # alpine-minion:
+  #   image: alpine-minion
+    # depends_on:
+    #   - salt
+  # ubuntu-minion:
+  #   image: ubuntu-minion
+  #   depends_on:
+  #     - salt

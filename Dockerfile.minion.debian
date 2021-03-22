@@ -1,0 +1,8 @@
+FROM debian:8-slim
+
+RUN apt-get update && \
+    apt-get install -y salt-minion
+
+COPY debian-entrypoint.sh /
+
+CMD ["sh", "/debian-entrypoint.sh"]

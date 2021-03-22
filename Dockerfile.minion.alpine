@@ -1,0 +1,7 @@
+FROM alpine
+
+RUN apk add --no-cache salt-minion
+
+COPY alpine-entrypoint.sh /
+
+CMD ["sh", "/alpine-entrypoint.sh"]
